@@ -1,0 +1,163 @@
+/* Port definition */
+
+////LAYOUT: 
+////PERIPHERALS: SERIAL0 SERIAL1 SERIAL2 I2C0 I2C1 SPI0 PWMD0
+////CDEFINES: STM32L4R9xx ZER_STM32L4xxxx_1_6
+
+const PinInfo const _vhalpinmap[] STORED = {
+    // ARDUINO Uno V3
+    /* D0 */ MAKE_PIN(PC, 0, HAS_EXT | HAS_SER),                               // UART1_RX
+    /* D1 */ MAKE_PIN(PC, 1, HAS_EXT | HAS_SER),                               // UART1_TX
+    /* D2 */ MAKE_PIN(PG, 11, HAS_EXT),                                        // 
+    /* D3 */ MAKE_PIN(PF, 10, HAS_EXT | HAS_PWM),                              // TIM15_CH2
+    /* D4 */ MAKE_PIN(PG, 6, HAS_EXT),                                         //   
+    /* D5 */ MAKE_PIN(PA, 1, HAS_EXT),                                          // 
+    /* D6 */ MAKE_PIN(PB, 4, HAS_EXT | HAS_PWM),                               // TIM3_CH1
+    /* D7 */ MAKE_PIN(PA, 4, HAS_EXT),                                         // DCMI_HSYNC(CN2), ADC(CN1)
+    /* D8 */ MAKE_PIN(PH, 15, HAS_EXT),                                        // 
+    /* D9 */ MAKE_PIN(PH, 13, HAS_EXT | HAS_PWM),                              // TIM8_CH1N
+    /* D10 */ MAKE_PIN(PI, 0, HAS_EXT),                                         // 
+    /* D11 */ MAKE_PIN(PB, 15, HAS_EXT | HAS_SPI | HAS_PWM | HAS_SER),          // MOSI2, TIM3_CH2, MOSIp2/USART3_TXD
+    /* D12 */ MAKE_PIN(PB, 14, HAS_EXT | HAS_SPI),                    // MISO2, MISOp2/USART3_RXD, SDA2
+    /* D13 */ MAKE_PIN(PB, 13, HAS_EXT | HAS_SPI),                              // SCLK2, SCLK2/USART3_RTS(CN1), LED3, SCL2
+    /* D14 */ MAKE_PIN(PG, 7, HAS_EXT | HAS_I2C),                               // SCL3(CN1)
+    /* D15 */ MAKE_PIN(PG, 8, HAS_EXT | HAS_I2C),                               // SDA3(CN1)
+        
+    /* D16 */ MAKE_PIN(PA, 02, HAS_EXT | HAS_SER),					            // TX2
+    /* D17 */ MAKE_PIN(PA, 03, HAS_EXT | HAS_SER),					            // RX2
+    /* D18 */ MAKE_PIN(PH, 04, HAS_EXT),					                    // LED1
+    /* D19 */ MAKE_PIN(PB, 01, HAS_EXT),					                    // Joystick-UP (MFX_GPIO1)
+    /* D20 */ MAKE_PIN(PB, 02, HAS_EXT),					                    // Joystick-DOWN (MFX_GPIO2)
+    /* D21 */ MAKE_PIN(PB, 03, HAS_EXT),					                    // Joystick-RIGHT (MFX_GPIO3)
+    /* D22 */ MAKE_PIN(PB, 04, HAS_EXT),					                    // Joystick-LEFT (MFX_GPIO4)
+    /* D23 */ MAKE_PIN(PC, 13, HAS_EXT),					                    // Joystick-SELECT 
+
+    // USB OTG FS Connector CN9
+    /* D24 */ MAKE_PIN(PA, 9, HAS_EXT),					                        // Vbus
+    /* D25 */ MAKE_PIN(PA, 11, HAS_EXT),					                    // DM, EXT_RESET(MFX_GPIO11, CN7)
+    /* D26 */ MAKE_PIN(PA, 12, HAS_EXT),					                    // DP, DCMI_PWR_EN(MFX_GPIO12, CN2)
+    /* D27 */ MAKE_PIN(PA, 10, HAS_EXT),					                    // ID
+
+    // ST-LINK/V2-1 USB Micro-B connector CN13
+    
+    // microSD card connector CN6
+    /* D28 */ MAKE_PIN(PC, 10, HAS_EXT),					                    // SDMMC1_D2
+    /* D29 */ MAKE_PIN(PC, 11, HAS_EXT),					                    // SDMMC1_D3
+    /* D30 */ MAKE_PIN(PD, 2, HAS_EXT),					                        // SDMMC1_CMD
+    /* D31 */ MAKE_PIN(PC, 12, HAS_EXT),					                    // SDMMC1_CLK
+    /* D32 */ MAKE_PIN(PC, 8, HAS_EXT),					                        // SDMMC1_D0
+    /* D33 */ MAKE_PIN(PC, 9, HAS_EXT),					                        // SDMMC1_D1
+
+    // STMod+ connector CN1
+    /* D34 */ MAKE_PIN(PA, 6, HAS_EXT),					                        // USART3_CTS
+    /* D35 */ MAKE_PIN(PI, 3, HAS_EXT | HAS_SPI),					            // MOSIs2
+    /* D36 */ MAKE_PIN(PI, 2, HAS_EXT | HAS_SPI),					            // MISOs2
+    /* D37 */ MAKE_PIN(PC, 6, HAS_EXT),					                        // INT, DCMI_D0(CN2)
+    /* D38 */ MAKE_PIN(PI, 7, HAS_EXT),					                        // RST, DCMI_D7(CN2)
+    /* D39 */ MAKE_PIN(PB, 12, HAS_EXT),					                    // 
+    /* D40 */ MAKE_PIN(PC, 2, HAS_EXT),					                        // 
+    /* D41 */ MAKE_PIN(PC, 7, HAS_EXT),					                        // DCMI_D1(CN2)
+    
+    // PMOD connector CN3
+
+    // Camera module connector CN2
+    /* D42 */ MAKE_PIN(PH, 11, HAS_EXT),					                    // DCMI_D2
+    /* D43 */ MAKE_PIN(PH, 12, HAS_EXT),					                    // DCMI_D3
+    /* D44 */ MAKE_PIN(PE, 4, HAS_EXT),					                        // DCMI_D4
+    /* D45 */ MAKE_PIN(PI, 4, HAS_EXT),					                        // DCMI_D5
+    /* D46 */ MAKE_PIN(PB, 8, HAS_EXT),					                        // DCMI_D6
+    /* D47 */ MAKE_PIN(PI, 5, HAS_EXT),					                        // DCMI_VSYNC
+    /* D48 */ MAKE_PIN(PA, 8, HAS_EXT),					                        // DCMI_CLK
+    /* D49 */ MAKE_PIN(PG, 13, HAS_EXT | HAS_I2C),                              // SDA1
+    /* D50 */ MAKE_PIN(PB, 6, HAS_EXT | HAS_I2C),					            // SCL1(CN7)
+    /* D51 */ MAKE_PIN(PH, 5, HAS_EXT),					                        // DCMI_PIXCK
+    
+    // TAG connector CN8
+    /* D52 */ MAKE_PIN(PA, 13, HAS_EXT),					                    // DCMI_PIXCK, SWDIO(CN5)
+    /* D53 */ MAKE_PIN(PA, 14, HAS_EXT),					                    // DCMI_PIXCK, SWCLK(CN5)
+    /* D54 */ MAKE_PIN(PH, 3, HAS_EXT),					                        // DCMI_PIXCK
+    /* D55 */ MAKE_PIN(PB, 3, HAS_EXT),					                        // DCMI_PIXCK, SWO(CN5)
+
+    // SWD header CN5
+
+    // EXT_I2C connector CN7
+
+    // Stereo headset and headphone jack CN12
+
+    // DSI display, backlight and touch panel connector CN4
+
+    /* ADC */ 
+    /* A0 */ MAKE_PIN(PA, 7, HAS_EXT | HAS_ADC),                               // ADC1_IN12
+    /* A1 */ MAKE_PIN(PC, 4, HAS_EXT | HAS_ADC),                               // ADC1_IN13
+    /* A2 */ MAKE_PIN(PC, 3, HAS_EXT | HAS_ADC),                               // ADC1_IN4
+    /* A3 */ MAKE_PIN(PB, 0, HAS_EXT | HAS_ADC),                               // ADC1_IN15, LED0
+    /* A4 */ MAKE_PIN(PA, 0, HAS_EXT | HAS_ADC),                               // ADC1_IN5
+    /* A5 */ MAKE_PIN(PA, 5, HAS_EXT | HAS_ADC),                               // ADC1_IN10, PWM(CN1), Micro-SD_DETECT(CN6 MFX_GPIO5)
+
+
+    /* D62 */ MAKE_PIN(PA, 15, HAS_EXT),					                        // 
+    /* D63 */ MAKE_PIN(PB, 11, HAS_EXT),					                        // 
+    /* D64 */ MAKE_PIN(PB, 10, HAS_EXT),					                        // 
+};
+
+const PinClass const _analogclass[] STORED = {
+    /* A0 */ MAKE_PIN_CLASS(56, 12, 0, 0),
+    /* A1 */ MAKE_PIN_CLASS(57, 13, 0, 0),
+    /* A2 */ MAKE_PIN_CLASS(58, 4, 0, 0),
+    /* A3 */ MAKE_PIN_CLASS(59, 15, 0, 0),
+    /* A4 */ MAKE_PIN_CLASS(60, 5, 0, 0),
+    /* A5 */ MAKE_PIN_CLASS(61, 10, 0, 0),
+};
+
+const PinClass const _spiclass[] STORED = {
+    /* pin_num, spi, alternate fn */
+    /* MOSI0 */ MAKE_PIN_CLASS(11, 2, 5, 0),
+    /* MISO0 */ MAKE_PIN_CLASS(12, 2, 5, 0),
+    /* SCLK0  */ MAKE_PIN_CLASS(13, 2, 5, 0),
+};
+
+const PinClass const _i2cclass[] STORED = {
+    /* pin_num, i2c, alternate fn */
+    /* SDA0 */ MAKE_PIN_CLASS(15, 3, 4, 0),
+    /* SCL0 */ MAKE_PIN_CLASS(14, 3, 4, 0),
+
+    /* SDA1 */ MAKE_PIN_CLASS(49, 1, 4, 0),
+    /* SCL1 */ MAKE_PIN_CLASS(50, 1, 4, 0),
+};
+
+const PinClass const _pwmclass[] STORED = {
+    /* pin_num, tid(0=TIM1,1=TIM2,2=TIM3,3=TIM6,4=TIM15,5=TIM16), alt fn, channel */
+    /* PWM0 */ MAKE_PIN_CLASS(3, 4, 2, 2),
+    /* PWM1 */ MAKE_PIN_CLASS(6, 2, 2, 1),
+    /* PWM2 */ MAKE_PIN_CLASS(11, 2, 2, 2),
+};
+
+
+const PinClass const _icuclass[] STORED = {
+};
+
+const PinClass const _canclass[] STORED = {
+    /* pin_num, usart, alternate fn */
+};
+
+const PinClass const _serclass[] STORED = {
+    /* pin_num, usart, alternate fn */
+    /* RX0 */ MAKE_PIN_CLASS(17, 2, 7, 0),
+    /* TX0 */ MAKE_PIN_CLASS(16, 2, 7, 0),
+
+    /* RX1 */ MAKE_PIN_CLASS(0, 1, 8, 0),
+    /* TX1 */ MAKE_PIN_CLASS(1, 1, 8, 0),
+};
+
+const PinClass const _dacclass[] STORED = {
+};
+
+const PinClass const _ledclass[] STORED = {
+    /* LED0 */ MAKE_PIN_CLASS(18, 0, 0, 0),
+};
+
+const PinClass const _btnclass[] STORED = {
+};
+
+
+

@@ -1,0 +1,13 @@
+---
+description: Add support for stm32l4r discovery
+fullname: board.zerynth.st_discoveryl4r9
+info:
+    board: ST Discovery L4R9
+    chip_manufacturer: STM
+    device: stm32l4r9
+    family_type: ARM Cortex M4
+keywords:
+- board
+- stm
+title: STM32L4R-DISCOVERY Board Support Package
+...
